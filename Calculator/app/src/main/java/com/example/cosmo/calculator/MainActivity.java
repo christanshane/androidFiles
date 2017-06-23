@@ -88,11 +88,6 @@ public class MainActivity extends AppCompatActivity {
                 info.setText(info.getText().toString()+"9");
             }
         });
-        nine.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v){
-                info.setText(info.getText().toString()+"9");
-            }
-        });
 
         add.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
