@@ -145,7 +145,8 @@
         android:layout_above="@+id/btndivide"
         android:layout_alignEnd="@+id/btndivide"
         android:layout_alignStart="@+id/btn9"
-        android:layout_marginBottom="37dp" />
+        android:layout_marginBottom="37dp"
+        android:textSize="30sp" />
 
     <TextView
         android:id="@+id/tvResult"
@@ -154,6 +155,7 @@
         android:layout_above="@+id/tvControl"
         android:layout_alignEnd="@+id/tvControl"
         android:layout_alignStart="@+id/btn9"
-        android:layout_marginBottom="38dp" />
+        android:layout_marginBottom="38dp"
+        android:textSize="30sp" />
 
 </RelativeLayout>

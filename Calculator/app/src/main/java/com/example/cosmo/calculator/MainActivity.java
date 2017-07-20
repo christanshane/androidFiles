@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private Button sub;
     private Button mul;
     private Button div;
+    private Button clr;
     private TextView info;
     private TextView result;
     private final char ADDITION = '+';
@@ -88,7 +89,11 @@ public class MainActivity extends AppCompatActivity {
                 info.setText(info.getText().toString()+"9");
             }
         });
-
+        clr.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                info.setText("");
+            }
+        });
         add.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
 
@@ -107,6 +112,7 @@ public class MainActivity extends AppCompatActivity {
         seven = (Button)findViewById(R.id.btn7);
         eight = (Button)findViewById(R.id.btn8);
         nine = (Button)findViewById(R.id.btn9);
+        clr = (Button)findViewById(R.id.btnclear);
         add = (Button)findViewById(R.id.btnplus);
         sub = (Button)findViewById(R.id.btnminus);
         mul = (Button)findViewById(R.id.btnmultiply);
