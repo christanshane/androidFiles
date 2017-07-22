@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class Account extends AppCompatActivity {
 
@@ -39,12 +40,18 @@ public class Account extends AppCompatActivity {
                 finish();
             }
         });
-
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(Account.this, MainActivity.class));
                 finish();
+            }
+        });
+
+        append.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
             }
         });
     }

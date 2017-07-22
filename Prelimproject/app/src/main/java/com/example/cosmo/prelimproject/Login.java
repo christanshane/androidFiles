@@ -23,7 +23,7 @@ public class Login extends AppCompatActivity {
         Button back = (Button)findViewById(R.id.login_backbtn);
 
         TextView username = (TextView)findViewById(R.id.login_username);
-        username.setText(sharedpreferences.getString("UserKey",null));
+        username.setText("Hello, " + sharedpreferences.getString("UserKey",null) + "!");
 
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,7 +37,6 @@ public class Login extends AppCompatActivity {
                                 editor.putString("UserKey",null);
                                 editor.putString("PassKey",null);
                                 editor.commit();
-                                Toast.makeText(Login.this,"You have logged out", Toast.LENGTH_LONG);
                                 startActivity(new Intent(Login.this, MainActivity.class));
                                 finish();
                                 break;
