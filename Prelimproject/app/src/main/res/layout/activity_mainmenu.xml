@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.cosmo.prelimproject.Mainmenu">
+
+    <TextView
+        android:id="@+id/mainmenu_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="27dp"
+        android:text="Placeholder"
+        android:textSize="18sp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/main_calc"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="62dp"
+        android:text="Calculator"
+        android:layout_below="@+id/mainmenu_user"
+        android:layout_alignStart="@+id/main_logout" />
+
+    <Button
+        android:id="@+id/main_logout"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/main_calc"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="22dp"
+        android:text="Logout" />
+
+    <Button
+        android:id="@+id/main_delete"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/main_logout"
+        android:layout_below="@+id/main_logout"
+        android:layout_marginTop="26dp"
+        android:text="Delete Account" />
+</RelativeLayout>

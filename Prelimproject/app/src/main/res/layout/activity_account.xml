@@ -46,4 +46,13 @@
         android:layout_below="@+id/account_appendbtn"
         android:layout_marginTop="30dp"
         android:text="Back to Main Menu" />
+
+    <TextView
+        android:id="@+id/errorcode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/account_passfield"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="27dp"
+        android:textColor="#ff0000" />
 </RelativeLayout>

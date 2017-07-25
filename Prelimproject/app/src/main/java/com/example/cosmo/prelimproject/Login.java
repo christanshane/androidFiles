@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,44 +20,39 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         final SharedPreferences sharedpreferences = getSharedPreferences("MyData", Context.MODE_PRIVATE);
-        Button logout = (Button)findViewById(R.id.login_logoutbtn);
         Button back = (Button)findViewById(R.id.login_backbtn);
+        Button login = (Button)findViewById(R.id.login_loginbtn);
+        final EditText userfield = (EditText)findViewById(R.id.login_userinput);
+        final EditText passfield = (EditText)findViewById(R.id.login_passinput);
 
-        TextView username = (TextView)findViewById(R.id.login_username);
-        username.setText("Hello, " + sharedpreferences.getString("UserKey",null) + "!");
 
-        logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        switch(i){
-                            case DialogInterface.BUTTON_POSITIVE:
-                                SharedPreferences.Editor editor = sharedpreferences.edit();
-                                editor.putString("UserKey",null);
-                                editor.putString("PassKey",null);
-                                editor.commit();
-                                startActivity(new Intent(Login.this, MainActivity.class));
-                                finish();
-                                break;
-                            case DialogInterface.BUTTON_NEGATIVE:
-                                Toast.makeText(Login.this,"Canceled ", Toast.LENGTH_SHORT).show();
-                                break;
-                        }
-                    }
-                };
-                AlertDialog.Builder builder = new AlertDialog.Builder(Login.this);
-                builder.setMessage("Are you sure you want to logout?").setPositiveButton("Yes", dialogClickListener)
-                        .setNegativeButton("No", dialogClickListener).show();
-            }
-        });
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(Login.this, MainActivity.class));
                 finish();
+            }
+        });
+
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String user = sharedpreferences.getString("UserKey",null);
+                String pass = sharedpreferences.getString("PassKey",null);
+                String userinput = userfield.getText().toString();
+                String passinput = passfield.getText().toString();
+
+                if(user.equals(userinput)&&pass.equals(pass)){
+                    startActivity(new Intent(Login.this, Mainmenu.class));
+                    finish();
+                }
+                else if(!user.equals(userinput)||!pass.equals(pass)){
+                    Toast.makeText(Login.this,"Username/Password is Incorrect!", Toast.LENGTH_LONG).show();
+                }
+                else{
+                    Toast.makeText(Login.this,"The fields should not be empty!", Toast.LENGTH_LONG).show();
+                }
             }
         });
     }

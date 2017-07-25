@@ -17,7 +17,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".Account" />
-        <activity android:name=".Login"></activity>
+        <activity android:name=".Login" />
+        <activity android:name=".Mainmenu"></activity>
+        <activity android:name=".Summation"/>
     </application>
 
 </manifest>
