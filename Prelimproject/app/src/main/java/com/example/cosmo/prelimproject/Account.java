@@ -26,6 +26,8 @@ public class Account extends AppCompatActivity {
         final EditText userfield = (EditText)findViewById(R.id.account_userfield);
         final EditText passfield = (EditText)findViewById(R.id.account_passfield);
         final TextView errordisplay = (TextView)findViewById(R.id.errorcode);
+        userfield.setText(sharedpreferences.getString("UserKey",null));
+        passfield.setText(sharedpreferences.getString("PassKey",null));
 
         append.setOnClickListener(new View.OnClickListener() {
 

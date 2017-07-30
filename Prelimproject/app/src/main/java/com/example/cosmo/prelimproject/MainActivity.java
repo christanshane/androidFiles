@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
             account.setEnabled(true);
         }else{
             login.setEnabled(true);
-            account.setEnabled(false);
+            account.setEnabled(true);
         }
 
         account.setOnClickListener(new View.OnClickListener() {

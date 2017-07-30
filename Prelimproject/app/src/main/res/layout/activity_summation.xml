@@ -185,5 +185,21 @@
         android:layout_marginBottom="12dp"
         android:text="Back to Main Menu" />
 
+    <Button
+        android:id="@+id/summation_clrbtn"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btn_eight"
+        android:layout_toStartOf="@+id/btn_nine"
+        android:text="Clear" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="Button" />
+
 
 </RelativeLayout>

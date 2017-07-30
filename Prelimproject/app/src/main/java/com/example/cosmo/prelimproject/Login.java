@@ -43,11 +43,11 @@ public class Login extends AppCompatActivity {
                 String userinput = userfield.getText().toString();
                 String passinput = passfield.getText().toString();
 
-                if(user.equals(userinput)&&pass.equals(pass)){
+                if(pass.equals(passinput)&&user.equals(userinput)){
                     startActivity(new Intent(Login.this, Mainmenu.class));
                     finish();
                 }
-                else if(!user.equals(userinput)||!pass.equals(pass)){
+                else if(!user.equals(userinput)||!pass.equals(passinput)){
                     Toast.makeText(Login.this,"Username/Password is Incorrect!", Toast.LENGTH_LONG).show();
                 }
                 else{

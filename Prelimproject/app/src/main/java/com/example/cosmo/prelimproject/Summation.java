@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.Stack;
 
@@ -29,6 +28,7 @@ public class Summation extends AppCompatActivity {
         Button eight = (Button) findViewById(R.id.btn_eight);
         Button nine = (Button) findViewById(R.id.btn_nine);
         Button zero = (Button) findViewById(R.id.btn_zero);
+        Button clr = (Button)findViewById(R.id.summation_clrbtn);
 
         Button clear = (Button) findViewById(R.id.btn_clear);
 
@@ -45,6 +45,16 @@ public class Summation extends AppCompatActivity {
         final TextView num = (TextView) findViewById(R.id.txt_num1);
 
 
+        clr.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String str = content.getText().toString();
+                if(!str.equals("")) {
+                    str = str.substring(0,str.length()-1);
+                    content.setText(str);
+                }
+            }
+        });
 
         zero.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -186,11 +196,10 @@ public class Summation extends AppCompatActivity {
             public void onClick(View view) {
 
                 String input = content.getText().toString();
-
-                input = calculatePostFix(convertInfix(Space(input)))+"";
-
-                num.setText(input);
-
+                if(!input.equals("")){
+                    input = calculatePostFix(convertInfix(Space(input)))+"";
+                    num.setText(input);
+                }
             }
         });
 
